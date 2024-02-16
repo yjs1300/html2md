@@ -26,3 +26,25 @@
       - 이미지 : 설명(alt attr)으로 대체 ('로고'가 포함된 것 등 제거)
   - 긴 문맥 안에서 gpt가 상위 항목을 어떻게 인식할 것인가?
       - header(#)수로 상하관계 조절, 6 이 넘어가면 볼드처리
+
+### crawler.py
+---
+main module 아키텍쳐
+
+depth1=[] #depth1 인 최상위 카테고리
+depth2=[] #depth2 인 최상위 카테고리
+ajax_or_js=[] #ajax/js 상위 제목
+
+nav_ctg = 크롤링후 네비게이션 바 url dict로 저장()
+
+for nav_c in nav_ctg:
+  if nav_c in depth1:
+    크롤링()
+    전처리()
+    마크다운 저장()
+  if nav_c in depth2:
+    depth3인 페이지 = 크롤링(페이지이동/클릭)() # 제목(#) 추가 후 하위 페이지 붙이기(class: m_title_)
+     if depth3인 페이지 :
+        크롤링(페이지이동/클릭) # 상위 페이지에 붙이기 (class: s_title_)
+    전처리()
+    마크다운 저장()
