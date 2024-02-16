@@ -31,9 +31,12 @@
 ### crawler.py
 ---
 main module 아키텍쳐
+
+- 한 페이지씩 테스트할 수 있도록 페이지별로 분류함
+
 ```
-depth1=[] #depth1 인 최상위 카테고리
-depth2=[] #depth2 인 최상위 카테고리
+depth1=[] #depth1 인 최상위 페이지
+depth2=[] #depth2 인 최상위 페이지
 ajax_or_js=[] #ajax/js 상위 제목
 
 nav_ctg = 크롤링후 네비게이션 바 url dict로 저장()
